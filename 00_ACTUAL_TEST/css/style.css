@@ -1,0 +1,398 @@
+* {
+    box-sizing: border-box;
+} /* border 사이즈에 관계없이 동일한 사이즈 */
+
+body{
+    margin: 0 auto; /* 요소 가운데로 */
+    color: #3f464d;
+    font-family: "Spoca Han Sans Neo", "Sans-serif";
+}
+
+a{
+    all: unset;
+}
+a:link{
+    text-decoration: none;
+    color: #3f464d;
+}
+a:visited{
+    text-decoration: none;
+    color: #3f464d;
+}
+a:active{
+    text-decoration: none;
+    color: #3f464d;
+}
+a:hover{
+    text-decoration: none;
+    color: #3f464d;
+}
+
+.inner{
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 2rem; /* 좌 우 패딩 간격 주기 */
+
+    overflow: hidden; 
+
+}
+header{
+    width: 100%;
+    height: 60px;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* 최상단 우선순위  설정 */
+}
+.head-container{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between; /* 수평 양끝 정렬 */
+    align-items: center; /* 수직 정렬 */
+}
+
+.head-container .head-brand{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.head-container .head-brand a:hover{
+    color: #2186c4;
+    cursor: pointer;
+}
+.head-container .head-blog{
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+.head-container .head-blog a:hover{
+    color: #2186c4;
+    cursor: pointer;
+}
+
+section{
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+}
+
+.main{
+    height: 360px;
+    background-image: url("https://www.fun-coding.org/assets_lms/images/photodune-4161018-group-of-students-m.jpg");
+    background-size: cover;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.main-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(47, 48, 49);
+    opacity: 0.8; /* 투명도 */
+    z-index: 2;
+    margin-top: 60px;
+}
+
+.title-container{
+    padding: 100px 0;
+}
+.title{
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 0.8rem;
+}
+.message{
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #fff;
+    line-height: 2rem;
+}
+
+.skill-container{
+    width: 100%;
+    display: flex;
+    height: 100%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 1rem 0;
+}
+.skill{
+    width: 25%;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 9px;
+    padding: 0.5rem 1rem;
+    margin: 1rem;
+    box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2); /* 박스 그림자 설정 (MDN에서 확인 가능) */
+
+    transition: 0.4s;
+}
+.skill:hover{
+    transform: translate(0, -5px);
+}
+.skill-icon{
+    font-size: 2.5rem;
+    margin: 0 10px;
+}
+
+.skill-title{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.skill-name{    /* 업무 자동화 */
+    font-weight: bold;
+    color: #3f464d;
+    margin-bottom: 0.2rem;
+}
+.skill-usage{   /* 크롤링/자동매매 */
+    font-size: 0.9rem;
+    color: #3f464d;
+}
+
+.python-style{
+    color: #2186c4;
+}
+.analysis-style{
+    color: #ff8066;
+}
+.ai-style{
+    color: #f7df1e;
+}
+.vue-style{
+    color: #2e7d32;
+}
+
+.roadmap-container{
+    width: 100%;
+    margin-top: 2rem;
+    
+}
+.roadmap-title-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.roadmap-title{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #545e6f;
+}
+.roadmap-desc{
+    display: visible;
+}
+
+ul li img:hover{ /* drag할 수 있는 아이템을 나타내는 표시를 포인터로 변경함 */
+    cursor : grab;
+}
+
+ul li img:active{ /* dragging 중인 상태에서 잡는 표시를 포인터로 변경함 */
+    cursor: grabbing; /* IE11에서는 지원 안함 */
+}
+li a:hover{
+    cursor: pointer;
+}
+.slide-prev{
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(47, 48, 49);
+}
+.slide-next{
+    font-size: 2rem;
+    cursor: pointer;
+}
+.slide-prev-hover:hover{
+    transition: transform 0.5s; 
+    transform: translateX(-2px); /* 0.5초동안 살짝 -2px 이동 < X축 방향으로 > */
+}
+.slide-next-hover:hover{
+    transition: transform 0.5s;
+    transform: translateX(2px); /* 0.5초동안 살짝 +2px 이동 < X축 방향으로 > */
+}
+
+.arrow-container{
+    display: flex;
+}
+
+.class-list{
+    display: flex;
+    list-style: none; /* ul 장식 제거 */
+    padding: 1rem 0; /* ul 장식을 제거해도 기본적인 패딩과 마진은 있기 때문에 디자인에 맞게 지정해줘야함 */
+    overflow: none; /* overflow를 hidden으로 설정하면 transform 설정 시 이미지 짤림 */
+}
+.class-card{
+    width: 240px; 
+    box-shadow: 10px 10px 10px -5px rgba(25, 42, 70, 0.2);
+    border-radius: 10px;
+    margin: 0 10px;
+
+    transition: 0.4s;
+    flex-shrink: 0; /* IE 호환 */
+}
+.class-card:hover{
+    box-shadow: 10px 10px 10px 0px rgba(25, 42, 70, 0.2);
+    transform: translate(0, -5px);
+}
+.class-image{
+    max-width: 100%; /* width로 해도 되지만 IE에서는 이미지 크기만큼 보여줄 수 있기에 max-width로 설정 */
+    border-radius: 8px 8px 0 0;
+    height: 150px;
+}
+.class-container{
+    width: 100%;
+    padding: 0.5rem 1rem 1rem 1rem;
+}
+.class-skill{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.class-type{
+    font-size: 0.8rem;
+    color: #949393;
+}
+.class-format{
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #0d47a1;
+    padding: 0.2rem;
+
+}
+.class-desc{
+    width: 100%;
+    margin-top: 1rem;
+}
+.class-desc:hover{
+    color : #2186c4;
+}
+.class-title{
+    font-weight: bold;
+    color: inherit;  /* 부모 컬러 상속 */
+    width: 100%;
+    white-space: nowrap; /* 연속 공백을 하나로 합침 */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.5rem;
+}
+.class-detail{
+    font-size: 0.9rem;
+    color: inherit;
+    line-height: 1.5rem;
+}
+
+footer{
+    border-top: 1px solid #e4e4e4;
+    background-color: #f8f9fa;
+    padding: 1rem 0;
+    margin: 1rem 0;
+}
+
+.footer-message{
+    font-weight: bold;
+    color: #545e6f;
+    margin: 0.3rem 0.5rem;
+    
+}
+.footer-contact{
+
+    color: #545e6f;
+    margin: 0 0.5rem;
+    
+}
+.footer-copyright{
+   
+    color: #545e6f;
+    margin: 1rem 0.5rem;
+    
+}
+
+#backtotop{
+    background-color: rgb(47,48,89);
+    width: 40px;
+    height: 40px;
+    text-align: center;
+
+    border-radius: 20px; /* border-radius를 width와 height의 중간값으로 하면 원형이 된다. */ 
+    position: fixed;
+    bottom: 30px; /*fixed 고정을 하면 위치값이 필요 */
+    right: 30px;
+    transition-property: background-color, opacity, visibility;
+    transition-duration: 0.3s,0.5s,0.5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 999; /* 맨위에 보여주기 위한 */
+}
+
+#backtotop::after{
+    content: "\f077";
+    font-family: FontAwesome;
+    font-size: 1.5rem;
+    line-height: 40px; /*height값과 같은 값으로 하면 중앙에 위치 */
+    color: #fff;
+}
+#backtotop.show{
+    opacity: 1;
+    visibility: visible;
+    background-color: rgb(47, 48, 49);
+}
+#backtotop.show:hover{
+    cursor: pointer;
+    background-color: #2186c4;
+}
+@media only screen and (min-width: 1200px){                    /* 반응형 미디어 쿼리 */
+    .inner{
+        max-width: 1200px;
+    }
+}
+@media only screen and (max-width: 980px){      /* 미디어 쿼리가 최대 980, 즉 980 이하일 때 */
+    .skill-container{
+        display: none; 
+    }
+    .roadmap-desc{
+        display: none;
+    }
+
+    
+}
+
+@media only screen and (max-width: 768px){
+  
+    .class.skill{
+        display: none;
+    }
+    .class-container{
+        padding: 0.5rem;
+    }
+    .class-desc{
+        margin-top: 0rem;
+    }
+}
+
+@media only screen and (max-width: 480px){      /* 모바일 환경 */
+    .title{
+        font-size : 1.6rem;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 0.8rem;
+    }
+    .message{
+        font-size : 1.4rem;
+        font-weight: normal;
+        color: #fff;
+        margin-bottom: 2rem;
+    }
+    .class.skill{
+        display: none;
+    }
+    .class-container{
+        padding: 0.5rem;
+    }
+    .class-desc{
+        margin-top: 0.3rem;
+    }
+}
